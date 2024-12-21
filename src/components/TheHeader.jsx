@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-export default function Home({title,description}) {
+export default function TheHeader({title,description}) {
   return (
   <header>
    <div className="text-center">
