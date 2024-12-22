@@ -2,7 +2,8 @@ export default function AddTask({ visibilityAddTaskModal ,addTask}) {
   let task = {
     title: null,
     piority: "high",
-    status:"processing"
+    status:"processing",
+    id: Math.floor(Math.random() * 100) + 1,
   };
 
   return (
