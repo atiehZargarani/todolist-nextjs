@@ -54,16 +54,16 @@ export default function Tasks() {
   };
 
   return (
-    <div className="my-10 px-10">
+    <div className="my-10 px-6">
       {/* add task section */}
 
-      <div className="flex justify-between items-center">
-        <span>start managing your task</span>
+      <div className="flex justify-between items-center mb-6">
+        <span className="text-violet-400  hover:text-violet-700">start managing your task</span>
         <button
           onClick={() => {
             visibilityAddTaskModal(true);
           }}
-          className="bg-violet-700 p-2 rounded-md text-sm"
+          className="bg-violet-800 p-2 rounded-md text-sm hover:bg-violet-900"
         >
           add task
         </button>
@@ -75,10 +75,10 @@ export default function Tasks() {
         return (
           <div
             key={key}
-            className="border border-gray-400 p-3 rounded-lg my-2 flex items-center justify-between"
+            className=" p-3 rounded-lg my-2 flex items-center justify-between bg-black"
           >
             <div>
-              <h3 className="text-violet-500">{task.title}</h3>
+              <h3 className="text-violet-500  font-bold">{task.title}</h3>
               <span className="text-xs text-gray-500">piority : </span>
               <span
                 className={clsx("text-xs", {
@@ -90,13 +90,14 @@ export default function Tasks() {
               </span>
             </div>
             <div className="space-x-2 flex items-center">
+            <span>{enumStatus(task.status)}</span>
+            <button className="bg-blue-900 p-2 text-left rounded-md text-sm hover:bg-blue-700">
+                <PencilIcon className="size-4" />
+              </button>
               <button className="bg-red-900 p-2 text-left rounded-md text-sm hover:bg-red-700">
                 <TrashIcon className="size-4" />
               </button>
-              <button className="bg-blue-900 p-2 text-left rounded-md text-sm hover:bg-blue-700">
-                <PencilIcon className="size-4" />
-              </button>
-              <span>{enumStatus(task.status)}</span>
+              
             </div>
           </div>
         );
