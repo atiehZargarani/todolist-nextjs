@@ -7,7 +7,7 @@ export default function Home() {
     <div className="flex items-center justify-center h-screen">
   
      
-      <div className="flex flex-col space-y-4 w-1/2">
+      <div className="flex flex-col space-y-2 w-1/3 bg-zinc-900 rounded-xl pb-5">
         <header>
           <TheHeader
             title="Todo"
