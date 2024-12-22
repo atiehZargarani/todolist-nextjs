@@ -17,16 +17,19 @@ export default function Tasks() {
       title: "task1",
       piority: "high",
       status: "completed",
+      id:1,
     },
     {
       title: "task2",
       piority: "low",
       status: "processing",
+      id:2,
     },
     {
       title: "task3",
       piority: "low",
       status: "failed",
+      id:3,
     },
   ]);
 
@@ -37,7 +40,13 @@ export default function Tasks() {
   const addTask = (newTask) => {
     setTasksList(() => [...tasksList, newTask]);
     visibilityAddTaskModal(false);
+    
   };
+
+  const deleteTask=(id)=>{
+    // return tasksList.filter(obj => obj.id !== id);
+    setTasksList( tasksList.filter(obj => obj.id !== id))
+  }
 
   const enumStatus = (status) => {
     switch (status) {
@@ -70,7 +79,8 @@ export default function Tasks() {
       </div>
 
       {/* task list section  */}
-
+     
+      
       {tasksList.map((task, key) => {
         return (
           <div
@@ -94,7 +104,7 @@ export default function Tasks() {
             <button className="bg-blue-900 p-2 text-left rounded-md text-sm hover:bg-blue-700">
                 <PencilIcon className="size-4" />
               </button>
-              <button className="bg-red-900 p-2 text-left rounded-md text-sm hover:bg-red-700">
+              <button className="bg-red-900 p-2 text-left rounded-md text-sm hover:bg-red-700" onClick={()=>{deleteTask(task.id)}}>
                 <TrashIcon className="size-4" />
               </button>
               
